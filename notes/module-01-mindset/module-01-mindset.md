@@ -109,3 +109,27 @@ Monorepo - Quản lý nhiều dự án trong một kho lưu trữ duy nhất là
 **Giới hạn ngữ cảnh:** Dự án quá lớn dễ gây tràn token của AI, đòi hỏi công cụ lập chỉ mục thông minh để lọc file liên quan.
 
 **Rủi ro hệ thống:** Lỗi sai của AI tại thư viện dùng chung có thể làm ảnh hưởng đến toàn bộ các dự án con bên trong Monorepo.
+
+## 7. Điểm yếu của AI và cách gỡ rối
+
+Khi lập trình bằng AI Agent hoặc áp dụng Vibe Coding, tốc độ sinh mã nguồn tăng lên rất nhanh nhưng đồng thời cũng sinh ra những nhóm lỗi đặc thù.
+
+Do Agent có khả năng tự động chỉnh sửa nhiều file và tự chạy lệnh, các lỗi này thường phức tạp hơn so với lỗi cú pháp thông thường.
+
+### 7.1. Lỗi Ngữ cảnh & Kiến trúc
+
+Dự án quá lớn khiến AI vượt giới hạn token và mất trí nhớ ngắn hạn, dẫn đến viết đè mã nguồn hoặc tạo các hàm trùng lặp tính năng.
+
+AI ưu tiên giải quyết bài toán trước mắt theo cách ngắn nhất, dễ tự ý phá vỡ quy tắc thiết kế và làm chắp vá codebase.
+
+### 7.2. Lỗi Vòng lặp Agentic
+
+Khi gặp lỗi quá khó, Agent tự bịa ra cách sửa sai $\rightarrow$ sinh lỗi mới $\rightarrow$ tiếp tục sửa sai mù quáng, gây cạn kiệt tài nguyên/chi phí.
+
+Định vị sai dòng cần sửa, chèn nhầm đoạn code vào giữa một hàm khác không liên quan, làm sập hệ thống mà không có log lỗi rõ ràng.
+
+### 7.3. Lỗi Bảo mật & Thư viện
+
+AI tự ý bịa ra hoặc cài đặt các gói thư viện không tồn tại, lỗi thời hoặc chứa lỗ hổng bảo mật để giải quyết nhanh vấn đề.
+
+Agent vô tình ghi cứng các thông tin bảo mật (API Keys, mật khẩu) vào mã nguồn công khai khi tự động tạo file cấu hình hoặc viết test.
