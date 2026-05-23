@@ -3,15 +3,15 @@
 ## 1. PHÂN RÃ COMPONENT (COMPONENT TREE)
 
 - **[SMART] CartDrawer**: Container chính của giỏ hàng. Gọi Global State để lấy danh sách sản phẩm, quản lý trạng thái mở/đóng, xử lý logic tăng/giảm số lượng và gọi API.
-  - **[DUMB] DrawerBackdrop** *(Tiềm năng Shared UI)*: Lớp nền tối được làm mờ (`backdrop-blur`). Bắt sự kiện click để đóng giỏ hàng.
-  - **[DUMB] DrawerContainer** *(Tiềm năng Shared UI)*: Khung chứa ngăn kéo, xử lý hiệu ứng trượt (slide-out) từ phải sang trái.
+  - **[DUMB] DrawerBackdrop** _(Tiềm năng Shared UI)_: Lớp nền tối được làm mờ (`backdrop-blur`). Bắt sự kiện click để đóng giỏ hàng.
+  - **[DUMB] DrawerContainer** _(Tiềm năng Shared UI)_: Khung chứa ngăn kéo, xử lý hiệu ứng trượt (slide-out) từ phải sang trái.
     - **[DUMB] CartHeader**: Phần tiêu đề (VD: "Giỏ hàng của bạn") và nút [X] màu xám nhạt để đóng.
     - **[DUMB] CartItemList**: Vùng chứa danh sách sản phẩm, thiết lập chiều cao tối đa và cuộn dọc.
       - **[DUMB] CartItem**: Component hiển thị thông tin chi tiết của một sản phẩm (Thumbnail, Tên, Giá).
-        - **[DUMB] QuantityStepper** *(Tiềm năng Shared UI)*: Component bộ đếm số lượng (nút [+] và [-]).
-        - **[DUMB] RemoveButton** *(Tiềm năng Shared UI)*: Nút xóa sản phẩm với màu xám nhạt.
+        - **[DUMB] QuantityStepper** _(Tiềm năng Shared UI)_: Component bộ đếm số lượng (nút [+] và [-]).
+        - **[DUMB] RemoveButton** _(Tiềm năng Shared UI)_: Nút xóa sản phẩm với màu xám nhạt.
     - **[DUMB] CartSummary**: Vùng chứa phần tạm tính, luôn ghim cố định (sticky) ở dưới cùng. Hiển thị phí giao hàng (nhấn mạnh màu xanh lá) và tổng tiền.
-    - **[DUMB] CheckoutButton** *(Tiềm năng Shared UI)*: Nút "Thanh Toán Ngay", bắt buộc dùng màu nền `bg-orange-600`.
+    - **[DUMB] CheckoutButton** _(Tiềm năng Shared UI)_: Nút "Thanh Toán Ngay", bắt buộc dùng màu nền `bg-orange-600`.
 
 ## 2. QUẢN LÝ TRẠNG THÁI (STATE MANAGEMENT)
 

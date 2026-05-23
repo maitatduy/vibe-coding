@@ -19,18 +19,18 @@
 
 - **Phong cách UI:** Minimalist kết hợp Glassmorphism
 - **Quy tắc hiển thị:**
-    - Khi mở Drawer, nền trang bên dưới phải tối đi và làm mờ (`backdrop-blur`)
-    - Vùng danh sách sản phẩm phải có thanh cuộn bên trong (scrollable)
-    - Phần Tạm tính & Nút Thanh toán phải ghim cố định (sticky) ở dưới cùng
+  - Khi mở Drawer, nền trang bên dưới phải tối đi và làm mờ (`backdrop-blur`)
+  - Vùng danh sách sản phẩm phải có thanh cuộn bên trong (scrollable)
+  - Phần Tạm tính & Nút Thanh toán phải ghim cố định (sticky) ở dưới cùng
 - **Màu sắc chủ đạo:**
-    - Nút "Thanh Toán" BẮT BUỘC dùng `bg-orange-600`
-    - Nút phụ (Xóa, Đóng) dùng màu xám nhạt trung tính
+  - Nút "Thanh Toán" BẮT BUỘC dùng `bg-orange-600`
+  - Nút phụ (Xóa, Đóng) dùng màu xám nhạt trung tính
 
 ## 4. Dữ liệu cốt lõi (Core Data)
 
 - **Danh sách sản phẩm (Cart Items):** Thumbnail vuông, Tên sản phẩm,
   Giá bán hiện tại, Bộ đếm số lượng
 - **Phần Tổng kết (Summary):**
-    - Phí giao hàng (hiển thị "Miễn phí" màu xanh lá)
-    - Tổng tiền
+  - Phí giao hàng (hiển thị "Miễn phí" màu xanh lá)
+  - Tổng tiền
 - **Call to Action:** Nút "Thanh Toán"

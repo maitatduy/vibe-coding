@@ -32,7 +32,7 @@
 
 - **CartItem**
   - Box Style: `flex gap-4 items-center`
-  - Typography: 
+  - Typography:
     - Tên SP: `text-sm font-semibold text-gray-800 line-clamp-2 leading-snug`
     - Giá: `text-sm font-bold text-gray-900 mt-1`
   - Ảnh Thumbnail: `w-20 h-20 rounded-xl object-cover border border-gray-100 shadow-sm`
@@ -49,7 +49,7 @@
 
 - **CartSummary**
   - Box Style: `px-6 py-6 bg-gray-50/90 backdrop-blur-md border-t border-gray-100 flex flex-col gap-3`
-  - Typography: 
+  - Typography:
     - Dòng thông thường: `flex justify-between text-sm text-gray-600`
     - Nhấn mạnh Phí giao hàng: `text-green-600 font-medium`
     - Tổng tiền: `flex justify-between items-center mt-2 pt-2 border-t border-gray-200/60` (Số tiền: `text-xl font-bold text-gray-900`)
