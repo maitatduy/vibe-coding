@@ -1,0 +1,1 @@
+- [2026-05-24 13:43:52] Đã khởi tạo Next.js, hoàn thành toàn bộ UI Trang chủ (Header, Footer, Hero, Category, Product) responsive hoàn chỉnh, tích hợp icon và mock data.
