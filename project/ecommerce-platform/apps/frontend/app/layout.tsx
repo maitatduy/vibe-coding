@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Be_Vietnam_Pro } from "next/font/google";
 import Header from "../components/ui/Header";
 import Footer from "../components/ui/Footer";
+import CartDrawer from "../components/ui/CartDrawer";
 import "./globals.css";
 
 const beVietnamPro = Be_Vietnam_Pro({
@@ -29,6 +30,7 @@ export default function RootLayout({
                     {children}
                 </main>
                 <Footer />
+                <CartDrawer />
             </body>
         </html>
     );

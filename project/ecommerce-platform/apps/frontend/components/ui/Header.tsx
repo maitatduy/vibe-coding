@@ -1,11 +1,20 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Logo from "./Logo";
 import AuthButton from "./AuthButton";
 import { Menu, X, Search, ShoppingCart } from "lucide-react";
+import { useCartStore } from "../../store/cartStore";
 
 export default function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const { openCart, cartItems } = useCartStore();
+    const [mounted, setMounted] = useState(false);
+    
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    const cartItemsCount = mounted ? cartItems.reduce((acc, item) => acc + item.quantity, 0) : 0;
 
     const handleAuthClick = () => {
         console.log("Auth click");
@@ -48,8 +57,16 @@ export default function Header() {
                     <button className="p-2 text-gray-600 hover:bg-gray-100 transition-colors rounded-full flex items-center justify-center">
                         <Search size={20} />
                     </button>
-                    <button className="p-2 text-gray-600 hover:bg-gray-100 transition-colors rounded-full flex items-center justify-center">
+                    <button 
+                        onClick={openCart}
+                        className="p-2 text-gray-600 hover:bg-gray-100 transition-colors rounded-full flex items-center justify-center relative"
+                    >
                         <ShoppingCart size={20} />
+                        {cartItemsCount > 0 && (
+                            <span className="absolute top-0 right-0 w-4 h-4 bg-orange-600 text-white text-[10px] font-bold rounded-full flex items-center justify-center translate-x-1 -translate-y-1">
+                                {cartItemsCount}
+                            </span>
+                        )}
                     </button>
                     <div className="hidden md:block">
                         <AuthButton

@@ -5,6 +5,7 @@ import HeroBanner from "../components/ui/HeroBanner";
 import CategoryList from "../components/ui/CategoryList";
 import ProductGrid from "../components/ui/ProductGrid";
 import SocialProofBanner from "../components/ui/SocialProofBanner";
+import { useCartStore } from "../store/cartStore";
 import { Pizza, CupSoda, Apple, Laptop } from "lucide-react";
 
 const mockCategories = [
@@ -41,6 +42,7 @@ const mockProducts = [
 ];
 
 export default function HomePage() {
+    const { addToCart, openCart } = useCartStore();
     const [addingProductIds, setAddingProductIds] = useState<
         Record<string, boolean>
     >({});
@@ -57,8 +59,16 @@ export default function HomePage() {
         setAddingProductIds((prev) => ({ ...prev, [product.id]: true }));
         setTimeout(() => {
             setAddingProductIds((prev) => ({ ...prev, [product.id]: false }));
-            console.log("Added to cart:", product.name);
-        }, 1000);
+            addToCart({
+                id: Math.random().toString(), // Mock unique cart item id
+                productId: product.id,
+                name: product.name,
+                thumbnailUrl: product.imageUrl,
+                currentPrice: product.price,
+                quantity: 1,
+            });
+            openCart();
+        }, 500);
     };
 
     const handleProductClick = (id: string) => {
