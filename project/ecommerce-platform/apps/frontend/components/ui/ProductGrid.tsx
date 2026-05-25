@@ -23,7 +23,7 @@ export function ProductCard({
     return (
         <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex flex-col h-full group hover:shadow-lg hover:border-orange-100 hover:-translate-y-1 transition-all duration-300">
             <div
-                className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-50 mb-4 cursor-pointer"
+                className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-50 mb-3 md:mb-4 cursor-pointer"
                 onClick={() => onProductClick(product.id)}
             >
                 <img
@@ -57,11 +57,11 @@ export function ProductCard({
             <div className="mt-4 flex items-end justify-between gap-2">
                 <div className="flex flex-col">
                     {product.originalPrice && (
-                        <span className="text-xs md:text-sm text-slate-400 line-through">
+                        <span className="text-[10px] sm:text-xs md:text-sm text-slate-400 line-through">
                             {product.originalPrice.toLocaleString("vi-VN")} ₫
                         </span>
                     )}
-                    <span className="text-base md:text-lg font-bold text-red-600">
+                    <span className="text-sm sm:text-base md:text-lg font-bold text-red-600">
                         {product.price.toLocaleString("vi-VN")} ₫
                     </span>
                 </div>
@@ -94,7 +94,7 @@ export function ProductCard({
 }
 
 interface ProductGridProps {
-    title: string;
+    title?: string;
     products: Product[];
     addingProductIds: Record<string, boolean>;
     onAddToCart: (product: Product) => void;
@@ -110,10 +110,12 @@ export default function ProductGrid({
 }: ProductGridProps) {
     return (
         <section>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6">
-                {title}
-            </h2>
-            <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
+            {title && (
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6">
+                    {title}
+                </h2>
+            )}
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
                 {products.map((p) => (
                     <ProductCard
                         key={p.id}

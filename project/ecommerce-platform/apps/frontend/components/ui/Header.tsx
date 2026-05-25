@@ -4,17 +4,20 @@ import Logo from "./Logo";
 import AuthButton from "./AuthButton";
 import { Menu, X, Search, ShoppingCart } from "lucide-react";
 import { useCartStore } from "../../store/cartStore";
+import Link from "next/link";
 
 export default function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const { openCart, cartItems } = useCartStore();
     const [mounted, setMounted] = useState(false);
-    
+
     useEffect(() => {
         setMounted(true);
     }, []);
 
-    const cartItemsCount = mounted ? cartItems.reduce((acc, item) => acc + item.quantity, 0) : 0;
+    const cartItemsCount = mounted
+        ? cartItems.reduce((acc, item) => acc + item.quantity, 0)
+        : 0;
 
     const handleAuthClick = () => {
         console.log("Auth click");
@@ -27,18 +30,18 @@ export default function Header() {
 
                 {/* Desktop Nav */}
                 <div className="hidden md:flex items-center gap-8">
-                    <a
+                    <Link
                         className="text-sm font-semibold text-orange-600 border-b-2 border-orange-600"
-                        href="#"
+                        href="/"
                     >
                         Trang chủ
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                         className="text-sm font-semibold text-gray-600 hover:text-orange-600 transition-colors"
-                        href="#"
+                        href="/products"
                     >
                         Sản phẩm
-                    </a>
+                    </Link>
                     <a
                         className="text-sm font-semibold text-gray-600 hover:text-orange-600 transition-colors"
                         href="#"
@@ -57,7 +60,7 @@ export default function Header() {
                     <button className="p-2 text-gray-600 hover:bg-gray-100 transition-colors rounded-full flex items-center justify-center">
                         <Search size={20} />
                     </button>
-                    <button 
+                    <button
                         onClick={openCart}
                         className="p-2 text-gray-600 hover:bg-gray-100 transition-colors rounded-full flex items-center justify-center relative"
                     >

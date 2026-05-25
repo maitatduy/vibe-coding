@@ -2,6 +2,7 @@ interface HeroBannerProps {
     title: string;
     subtitle: string;
     backgroundImageUrl: string;
+    ctaText?: string;
     onCtaClick: () => void;
 }
 
@@ -9,6 +10,7 @@ export default function HeroBanner({
     title,
     subtitle,
     backgroundImageUrl,
+    ctaText,
     onCtaClick,
 }: HeroBannerProps) {
     return (
@@ -31,7 +33,7 @@ export default function HeroBanner({
                         onClick={onCtaClick}
                         className="px-6 py-3 md:px-8 md:py-4 bg-orange-500 text-white font-bold rounded-full uppercase tracking-wider text-sm md:text-base hover:bg-orange-600 hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-500/30 transition-all duration-300 active:scale-95"
                     >
-                        MUA NGAY KẺO ĐÓI
+                        {ctaText || "MUA NGAY KẺO ĐÓI"}
                     </button>
                 </div>
             </div>
