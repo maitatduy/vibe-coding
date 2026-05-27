@@ -37,3 +37,5 @@ Khi sinh code, BẮT BUỘC áp dụng các lớp phòng thủ sau:
 ## 4. BÁO CÁO KẾT QUẢ
 
 - Sau khi ghi file, in ra danh sách các Endpoints (hoặc Server Actions) vừa được tạo thành công kèm đường dẫn file vật lý tương ứng để người dùng kiểm tra.
+
+- Liệt kê danh sách các endpoint đã xây dựng ghi vào file `.docs/endpoint-apis/[Tên plan].md` để làm tài liệu tham khảo sau này.
