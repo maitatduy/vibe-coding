@@ -1,0 +1,21 @@
+export const CACHE_TTL = {
+  HOME_V1: {
+    BANNERS: 3600000, // 1 hour
+    CATEGORIES: 3600000, // 1 hour
+    FEATURED_PRODUCTS: 3600000, // 1 hour
+  },
+  PRODUCT_V1: {
+    FILTERS_META: 86400000, // 1 day
+  },
+};
+
+export const CACHE_KEY = {
+  HOME_V1: {
+    BANNERS: 'HOME_V1_BANNERS',
+    CATEGORIES: 'HOME_V1_CATEGORIES',
+    FEATURED_PRODUCTS: 'HOME_V1_FEATURED_PRODUCTS',
+  },
+  PRODUCT_V1: {
+    FILTERS_META: 'PRODUCT_V1_FILTERS_META',
+  },
+};

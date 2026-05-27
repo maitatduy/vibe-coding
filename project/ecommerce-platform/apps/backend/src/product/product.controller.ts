@@ -1,7 +1,8 @@
 import { Controller, Get, Query, InternalServerErrorException, HttpCode, HttpStatus, Logger, UseInterceptors } from '@nestjs/common';
-import { CacheInterceptor, CacheTTL } from '@nestjs/cache-manager';
+import { CacheInterceptor, CacheKey, CacheTTL } from '@nestjs/cache-manager';
 import { ProductService } from '@/product/product.service';
 import { GetProductsDto } from '@/product/dto/get-products.dto';
+import { CACHE_KEY, CACHE_TTL } from '@/constants/cache.constant';
 
 @Controller('api/v1/products')
 export class ProductController {
@@ -11,7 +12,8 @@ export class ProductController {
 
   @Get('filters-meta')
   @UseInterceptors(CacheInterceptor)
-  @CacheTTL(86400000) // Cache 1 day for filters meta (in ms) as per plan
+  @CacheKey(CACHE_KEY.PRODUCT_V1.FILTERS_META)
+  @CacheTTL(CACHE_TTL.PRODUCT_V1.FILTERS_META)
   @HttpCode(HttpStatus.OK)
   async getFiltersMeta() {
     try {
