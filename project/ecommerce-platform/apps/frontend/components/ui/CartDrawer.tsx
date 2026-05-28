@@ -1,6 +1,7 @@
 "use client";
 
-import { useCartStore, ICartItem } from "../../store/cartStore";
+import { useCartStore } from "@/store/cartStore";
+import { ICartItem } from "@/types";
 import { X, Plus, Minus, Trash2, ShoppingBag } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";

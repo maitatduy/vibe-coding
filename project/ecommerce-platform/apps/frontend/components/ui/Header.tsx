@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Logo from "./Logo";
 import AuthButton from "./AuthButton";
 import { Menu, X, Search, ShoppingCart } from "lucide-react";
-import { useCartStore } from "../../store/cartStore";
+import { useCartStore } from "@/store/cartStore";
 import Link from "next/link";
 
 export default function Header() {

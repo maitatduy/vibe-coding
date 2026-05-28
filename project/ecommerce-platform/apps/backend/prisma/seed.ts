@@ -23,10 +23,10 @@ async function main() {
 
   // 2. Seed Categories
   const categoriesData = [
-    { id: 'cat-1', name: 'Đồ Ăn Vặt', slug: 'do-an-vat', icon: '🍟' },
-    { id: 'cat-2', name: 'Nước Uống', slug: 'nuoc-uong', icon: '🥤' },
-    { id: 'cat-3', name: 'Trái Cây Tô', slug: 'trai-cay-to', icon: '🍓' },
-    { id: 'cat-4', name: 'Combo Deadline', slug: 'combo-deadline', icon: '💻' },
+    { id: 'cat-1', name: 'Đồ Ăn Vặt', slug: 'do-an-vat', icon: 'Pizza' },
+    { id: 'cat-2', name: 'Nước Uống', slug: 'nuoc-uong', icon: 'CupSoda' },
+    { id: 'cat-3', name: 'Trái Cây Tô', slug: 'trai-cay-to', icon: 'Apple' },
+    { id: 'cat-4', name: 'Combo Deadline', slug: 'combo-deadline', icon: 'Laptop' },
   ];
 
   for (const cat of categoriesData) {

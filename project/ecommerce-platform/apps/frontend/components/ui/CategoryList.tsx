@@ -1,10 +1,5 @@
 import React from "react";
-
-export interface Category {
-    id: string;
-    name: string;
-    icon: React.ReactNode;
-}
+import { Category } from "@/types";
 
 export interface CategoryCardProps {
     category: Category;

@@ -1,13 +1,5 @@
 import { create } from "zustand";
-
-export interface ICartItem {
-    id: string;
-    productId: string;
-    name: string;
-    thumbnailUrl: string;
-    currentPrice: number;
-    quantity: number;
-}
+import { ICartItem } from "@/types";
 
 interface CartState {
     isCartOpen: boolean;

@@ -9,3 +9,5 @@
 - [2026-05-27 22:23:32] Đã viết tài liệu API trang chủ và hoàn thành viết API lấy danh sách sản phẩm, metadata bộ lọc.
 
 - [2026-05-27 22:36:41] Đã cấu hình CORS whitelist và tách riêng các hằng số Cache (Key, TTL) cho toàn bộ API.
+
+- [2026-05-28 10:30:42] Tái cấu trúc Frontend chuẩn Next.js 15: chuyển Page (Home, Product) sang Server Component, tạo Service Layer fetch API, đồng bộ Type và fix lỗi render icon Lucide.

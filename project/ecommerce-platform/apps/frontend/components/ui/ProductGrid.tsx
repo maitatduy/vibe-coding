@@ -1,11 +1,4 @@
-export interface Product {
-    id: string;
-    name: string;
-    price: number;
-    originalPrice?: number;
-    imageUrl: string;
-    badges?: string[];
-}
+import { Product } from "@/types";
 
 export interface ProductCardProps {
     product: Product;
